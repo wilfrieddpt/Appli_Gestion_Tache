@@ -1,0 +1,25 @@
+# Node.js
+node_modules/
+package-lock.json
+package.json
+
+# Logs
+*.log
+logs/
+
+# Dossiers de build
+dist/
+build/
+
+# Fichiers temporaires
+*.tmp
+*.bak
+
+# Configurations sensibles
+.env
+.env.local
+.env.*.local
+
+# Fichiers système
+.DS_Store
+Thumbs.db
