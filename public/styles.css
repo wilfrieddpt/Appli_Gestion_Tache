@@ -1,97 +1,96 @@
 /* Styles généraux */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 20px;
-    text-align: center;
-  }
-  
-  /* Titre principal */
-  h1 {
-    color: #333;
-  }
-  
-  /* Formulaire d'ajout */
-  form {
-    background: white;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    width: 300px;
-    margin: 20px auto;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  input, textarea, select, button {
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-  }
-  
-  button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Liste des tâches */
-  #task-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    justify-content: center;
-  }
-  
-  /* Carte d'une tâche */
-  .task {
-    background: white;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    width: 280px;
-    text-align: left;
-  }
-  
-  .task h3 {
-    margin: 0 0 10px;
-    color: #007bff;
-  }
-  
-  .task p {
-    margin: 5px 0;
-    color: #555;
-  }
-  
-  .task button {
-    margin-top: 10px;
-    padding: 8px;
-    width: 100%;
-  }
-  
-  .task button:nth-child(2) {
-    background-color: #dc3545;
-  }
-  
-  .task button:nth-child(2):hover {
-    background-color: #a71d2a;
-  }
-  
-  /* Filtres */
-  #filters {
-    margin: 20px 0;
-  }
-  
-  #filters select, #filters button {
-    margin: 5px;
-    padding: 10px;
-  }
-  
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Titre principal */
+h1 {
+  color: #333;
+}
+
+/* Formulaire d'ajout */
+form {
+  background: rgb(80, 80, 93);
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  width: 300px;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input, textarea, select, button {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Liste des tâches */
+#task-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+/* Carte d'une tâche */
+.task {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  width: 280px;
+  text-align: left;
+}
+
+.task h3 {
+  margin: 0 0 10px;
+  color: #007bff;
+}
+
+.task p {
+  margin: 5px 0;
+  color: #555;
+}
+
+.task button {
+  margin-top: 10px;
+  padding: 8px;
+  width: 100%;
+}
+
+.task button:nth-child(2) {
+  background-color: #dc3545;
+}
+
+.task button:nth-child(2):hover {
+  background-color: #a71d2a;
+}
+
+/* Filtres */
+#filters {
+  margin: 20px 0;
+}
+
+#filters select, #filters button {
+  margin: 5px;
+  padding: 10px;
+}

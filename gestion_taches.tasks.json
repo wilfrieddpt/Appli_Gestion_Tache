@@ -1,0 +1,126 @@
+[{
+  "_id": {
+    "$oid": "67e4201bfd35fb115363deae"
+  },
+  "titre": "test",
+  "description": "test de tache",
+  "statut": "en cours",
+  "priorite": "moyenne",
+  "etiquettes": [],
+  "dateCreation": {
+    "$date": "2025-03-26T15:41:15.172Z"
+  },
+  "sousTaches": [],
+  "commentaires": [
+    {
+      "auteur": {
+        "nom": "Utilisateur",
+        "prenom": "",
+        "email": ""
+      },
+      "date": {
+        "$date": "2025-03-26T16:02:25.314Z"
+      },
+      "contenu": "pas ouf",
+      "_id": {
+        "$oid": "67e42511140ab267e62e1f38"
+      }
+    }
+  ],
+  "historiqueModifications": [
+    {
+      "champModifie": "statut",
+      "ancienneValeur": "à faire",
+      "nouvelleValeur": "en cours",
+      "date": {
+        "$date": "2025-03-26T15:52:16.940Z"
+      },
+      "_id": {
+        "$oid": "67e422b09e26f82ebc03f905"
+      }
+    }
+  ],
+  "__v": 2
+},
+{
+  "_id": {
+    "$oid": "67e4209cb396e663f5deebe4"
+  },
+  "titre": "test2",
+  "description": "Ceci est un test",
+  "statut": "terminée",
+  "priorite": "basse",
+  "etiquettes": [],
+  "dateCreation": {
+    "$date": "2025-03-26T15:43:24.338Z"
+  },
+  "sousTaches": [],
+  "commentaires": [],
+  "historiqueModifications": [
+    {
+      "champModifie": "statut",
+      "ancienneValeur": "à faire",
+      "nouvelleValeur": "terminée",
+      "date": {
+        "$date": "2025-03-26T15:52:26.496Z"
+      },
+      "_id": {
+        "$oid": "67e422ba9e26f82ebc03f90a"
+      }
+    }
+  ],
+  "__v": 1
+},
+{
+  "_id": {
+    "$oid": "67e42634140ab267e62e1f5c"
+  },
+  "titre": "c'est un test mon gars",
+  "description": "blablabla bliblibli bloubloubloublou",
+  "statut": "à faire",
+  "priorite": "critique",
+  "etiquettes": [],
+  "dateCreation": {
+    "$date": "2025-03-26T16:07:16.757Z"
+  },
+  "sousTaches": [],
+  "commentaires": [],
+  "historiqueModifications": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67e427072516cbbcef20039c"
+  },
+  "titre": "test3",
+  "description": "test",
+  "statut": "à faire",
+  "priorite": "moyenne",
+  "auteur": {
+    "nom": "Dupont",
+    "prenom": "Wilfried",
+    "email": "wil.dpt2015@gmail.com"
+  },
+  "etiquettes": [],
+  "dateCreation": {
+    "$date": "2025-03-26T16:10:47.716Z"
+  },
+  "sousTaches": [],
+  "commentaires": [
+    {
+      "auteur": {
+        "nom": "Utilisateur",
+        "prenom": "",
+        "email": ""
+      },
+      "date": {
+        "$date": "2025-03-26T16:18:23.197Z"
+      },
+      "contenu": "test de commentaire",
+      "_id": {
+        "$oid": "67e428cf2516cbbcef2003b1"
+      }
+    }
+  ],
+  "__v": 1
+}]
