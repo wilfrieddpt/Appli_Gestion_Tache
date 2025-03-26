@@ -8,9 +8,7 @@ const PORT = process.env.PORT || 3000;
 
 const path = require('path');
 
-// Servir les fichiers statiques (HTML, CSS, JS)
 app.use(express.static(path.join(__dirname, 'public')));
-
 
 // Middleware
 app.use(express.json());

@@ -26,12 +26,27 @@ const TaskSchema = new mongoose.Schema({
   echeance: Date,
   statut: { type: String, enum: ['à faire', 'en cours', 'terminée', 'annulée'], default: 'à faire' },
   priorite: { type: String, enum: ['basse', 'moyenne', 'haute', 'critique'], default: 'moyenne' },
-  auteur: { nom: String, prenom: String, email: String },
+  auteur: {
+    nom: String,
+    prenom: String,
+    email: String,
+  },
   categorie: String,
   etiquettes: [String],
-  sousTaches: [SousTacheSchema],
-  commentaires: [CommentaireSchema],
-  historiqueModifications: [HistoriqueSchema],
+  sousTaches: [
+    {
+      titre: String,
+      statut: { type: String, enum: ['à faire', 'en cours', 'terminée', 'annulée'] },
+      echeance: Date,
+    },
+  ],
+  commentaires: [
+    {
+      auteur: { nom: String, prenom: String, email: String },
+      date: { type: Date, default: Date.now },
+      contenu: String,
+    },
+  ],
 });
 
 module.exports = mongoose.model('Task', TaskSchema);

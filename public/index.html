@@ -11,6 +11,9 @@
 
   <!-- Formulaire d'ajout de tâche -->
   <form id="task-form">
+    <input type="text" id="auteur-nom" placeholder="Nom de l'auteur">
+    <input type="text" id="auteur-prenom" placeholder="Prénom de l'auteur">
+    <input type="email" id="auteur-email" placeholder="Email de l'auteur">
     <input type="text" id="titre" placeholder="Titre" required>
     <textarea id="description" placeholder="Description"></textarea>
     <select id="priorite">
@@ -19,6 +22,7 @@
       <option value="haute">Haute</option>
       <option value="critique">Critique</option>
     </select>
+    <input type="text" id="commentaire" placeholder="Ajouter un commentaire">
     <button type="submit">Ajouter</button>
   </form>
 
@@ -41,6 +45,24 @@
     </select>
 
     <button id="appliquer-filtres">Filtrer</button>
+  </div>
+
+  <!-- Formulaire de modification de tâche -->
+  <div id="edit-task-form-container" style="display: none;">
+    <h3>Modifier une tâche</h3>
+    <form id="edit-task-form">
+      <input type="text" id="edit-titre" placeholder="Titre" required>
+      <textarea id="edit-description" placeholder="Description"></textarea>
+      <select id="edit-priorite">
+        <option value="basse">Basse</option>
+        <option value="moyenne">Moyenne</option>
+        <option value="haute">Haute</option>
+        <option value="critique">Critique</option>
+      </select>
+      <input type="text" id="edit-commentaire" placeholder="Ajouter un commentaire">
+      <button type="submit">Enregistrer les modifications</button>
+      <button type="button" onclick="cancelEdit()">Annuler</button>
+    </form>
   </div>
 
   <!-- Liste des tâches -->

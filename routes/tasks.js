@@ -48,36 +48,43 @@ router.get('/:id', async (req, res) => {
 // POST /tasks : Créer une nouvelle tâche
 router.post('/', async (req, res) => {
   try {
-    const task = new Task(req.body);
-    await task.save();
-    res.status(201).json(task);
+    const { titre, description, priorite, auteur } = req.body;
+
+    const newTask = new Task({
+      titre,
+      description,
+      priorite,
+      auteur,
+    });
+
+    await newTask.save();
+    res.status(201).json(newTask);
   } catch (err) {
     res.status(400).json({ error: err.message });
   }
 });
 
-// PUT /tasks/:id : Modifier une tâche existante et enregistrer l'historique
+// PUT /tasks/:id : Modifier une tâche existante
 router.put('/:id', async (req, res) => {
   try {
+    const { titre, description, priorite, commentaire } = req.body;
+
+    // Mettre à jour la tâche
     const task = await Task.findById(req.params.id);
     if (!task) return res.status(404).json({ error: 'Tâche non trouvée' });
 
-    // Créer l'historique des modifications
-    const modifications = [];
-    Object.keys(req.body).forEach(key => {
-      if (task[key] !== req.body[key]) {
-        modifications.push({
-          champModifie: key,
-          ancienneValeur: task[key],
-          nouvelleValeur: req.body[key],
-          date: new Date()
-        });
-      }
-    });
+    if (titre) task.titre = titre;
+    if (description) task.description = description;
+    if (priorite) task.priorite = priorite;
 
-    // Mettre à jour la tâche
-    Object.assign(task, req.body);
-    task.historiqueModifications.push(...modifications);
+    // Ajouter un commentaire si fourni
+    if (commentaire) {
+      task.commentaires.push({
+        auteur: { nom: 'Utilisateur', prenom: '', email: '' }, // Remplacez par des données réelles si disponibles
+        date: new Date(),
+        contenu: commentaire,
+      });
+    }
 
     await task.save();
     res.json(task);
