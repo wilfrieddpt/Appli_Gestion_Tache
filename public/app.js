@@ -1,6 +1,6 @@
 const API_URL = 'http://localhost:3000/tasks';
 
-// Récupérer et afficher les tâches avec filtres
+// Récupére et affiche les tâches avec filtres
 async function fetchTasks() {
   const statut = document.getElementById('filtre-statut').value;
   const priorite = document.getElementById('filtre-priorite').value;
@@ -12,12 +12,13 @@ async function fetchTasks() {
   if (params.toString()) url += `?${params.toString()}`;
 
   const taskList = document.getElementById('task-list');
-  taskList.innerHTML = '<p>Chargement des tâches...</p>'; // Indicateur de chargement
+  taskList.innerHTML = '<p>Chargement des tâches...</p>'; // On indique le chargement
 
   try {
     const response = await fetch(url);
     if (!response.ok) throw new Error('Erreur lors de la récupération des tâches.');
 
+    // affichage des taches 
     const tasks = await response.json();
     taskList.innerHTML = tasks.map(task => `
       <div class="task">
@@ -47,7 +48,7 @@ async function fetchTasks() {
   }
 }
 
-// Ajouter une nouvelle tâche
+// Ajoute une nouvelle tâche
 async function addTask(event) {
   event.preventDefault();
   const titre = document.getElementById('titre').value.trim();
@@ -72,7 +73,7 @@ async function addTask(event) {
     });
 
     document.getElementById('task-form').reset();
-    fetchTasks(); // Rafraîchir la liste des tâches
+    fetchTasks(); // Rafraîchi la liste des tâches
   } catch (error) {
     console.error(error);
     alert('Erreur lors de l\'ajout de la tâche.');
@@ -81,14 +82,14 @@ async function addTask(event) {
 
 let currentTaskId = null;
 
-// Afficher le formulaire de modification avec les données existantes
+// Affiche le formulaire de modification avec les données existantes
 async function editTask(id) {
   try {
     const response = await fetch(`${API_URL}/${id}`);
     if (!response.ok) throw new Error('Erreur lors de la récupération de la tâche.');
 
     const task = await response.json();
-    currentTaskId = id; // Stocker l'ID de la tâche
+    currentTaskId = id; // Stocke l'ID de la tâche
     document.getElementById('edit-titre').value = task.titre;
     document.getElementById('edit-description').value = task.description;
     document.getElementById('edit-priorite').value = task.priorite;
@@ -101,7 +102,7 @@ async function editTask(id) {
   }
 }
 
-// Envoyer les modifications au backend
+// Envoie les modifications au backend
 async function saveTask(event) {
   event.preventDefault();
 
@@ -122,30 +123,30 @@ async function saveTask(event) {
       body: JSON.stringify({ titre, description, priorite, commentaire }),
     });
 
-    // Réinitialiser le formulaire et masquer
+    // Réinitialise le formulaire et masque
     document.getElementById('edit-task-form').reset();
     document.getElementById('edit-task-form-container').style.display = 'none';
 
-    fetchTasks(); // Rafraîchir la liste des tâches
+    fetchTasks(); // Rafraîchi la liste des tâches
   } catch (error) {
     console.error(error);
     alert('Erreur lors de la modification de la tâche.');
   }
 }
 
-// Annuler la modification
+// Annule la modification
 function cancelEdit() {
   document.getElementById('edit-task-form').reset();
   document.getElementById('edit-task-form-container').style.display = 'none';
 }
 
-// Supprimer une tâche
+// Supprime une tâche
 async function deleteTask(id) {
   if (!confirm('Voulez-vous vraiment supprimer cette tâche ?')) return;
 
   try {
     await fetch(`${API_URL}/${id}`, { method: 'DELETE' });
-    fetchTasks(); // Rafraîchir la liste des tâches
+    fetchTasks(); // Rafraîchi la liste des tâches
   } catch (error) {
     console.error(error);
     alert('Erreur lors de la suppression de la tâche.');
@@ -157,5 +158,5 @@ document.getElementById('appliquer-filtres').addEventListener('click', fetchTask
 document.getElementById('task-form').addEventListener('submit', addTask);
 document.getElementById('edit-task-form').addEventListener('submit', saveTask);
 
-// Charger les tâches au démarrage
+// Charge les tâches au démarrage
 fetchTasks();

@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Task = require('../models/task');
 
-// GET /tasks : Récupérer toutes les tâches avec filtres et tri
+// GET /tasks : Récupére toutes les tâches avec filtres et tri
 router.get('/', async (req, res) => {
   try {
     let query = {};
@@ -34,7 +34,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-// GET /tasks/:id : Récupérer une tâche par ID
+// GET /tasks/:id : Récupére une tâche par ID
 router.get('/:id', async (req, res) => {
   try {
     const task = await Task.findById(req.params.id);
@@ -64,7 +64,7 @@ router.post('/', async (req, res) => {
   }
 });
 
-// PUT /tasks/:id : Modifier une tâche existante
+// PUT /tasks/:id : Modifie une tâche existante
 router.put('/:id', async (req, res) => {
   try {
     const { titre, description, priorite, commentaire } = req.body;
@@ -77,10 +77,10 @@ router.put('/:id', async (req, res) => {
     if (description) task.description = description;
     if (priorite) task.priorite = priorite;
 
-    // Ajouter un commentaire si fourni
+    // Ajoute un commentaire
     if (commentaire) {
       task.commentaires.push({
-        auteur: { nom: 'Utilisateur', prenom: '', email: '' }, // Remplacez par des données réelles si disponibles
+        auteur: { nom: 'Utilisateur', prenom: '', email: '' },
         date: new Date(),
         contenu: commentaire,
       });
@@ -93,7 +93,7 @@ router.put('/:id', async (req, res) => {
   }
 });
 
-// DELETE /tasks/:id : Supprimer une tâche
+// DELETE /tasks/:id : Supprime une tâche
 router.delete('/:id', async (req, res) => {
   try {
     const task = await Task.findByIdAndDelete(req.params.id);
@@ -104,7 +104,7 @@ router.delete('/:id', async (req, res) => {
   }
 });
 
-// POST /tasks/:id/comment : Ajouter un commentaire à une tâche
+// POST /tasks/:id/comment : Ajoute un commentaire à une tâche
 router.post('/:id/comment', async (req, res) => {
   try {
     const task = await Task.findById(req.params.id);
