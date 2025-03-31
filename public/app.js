@@ -94,7 +94,7 @@ async function editTask(id) {
     document.getElementById('edit-titre').value = task.titre;
     document.getElementById('edit-description').value = task.description;
     document.getElementById('edit-priorite').value = task.priorite;
-    //document.getElementById('filtre-statut').value = task.statut;
+    document.getElementById('filtre-statut').value = task.statut;
     document.getElementById('edit-commentaire').value = ''; // Champ vide pour un nouveau commentaire
     
     document.getElementById('edit-task-form-container').style.display = 'block';
