@@ -94,8 +94,9 @@ async function editTask(id) {
     document.getElementById('edit-titre').value = task.titre;
     document.getElementById('edit-description').value = task.description;
     document.getElementById('edit-priorite').value = task.priorite;
+    //document.getElementById('filtre-statut').value = task.statut;
     document.getElementById('edit-commentaire').value = ''; // Champ vide pour un nouveau commentaire
-
+    
     document.getElementById('edit-task-form-container').style.display = 'block';
   } catch (error) {
     console.error(error);
@@ -111,6 +112,7 @@ async function saveTask(event) {
   const description = document.getElementById('edit-description').value.trim();
   const priorite = document.getElementById('edit-priorite').value;
   const commentaire = document.getElementById('edit-commentaire').value.trim();
+  const statut = document.getElementById('filtre-statut').value;
 
   if (!titre || !priorite) {
     alert('Le titre et la priorité sont obligatoires.');
