@@ -31,7 +31,7 @@ const TaskSchema = new mongoose.Schema({
     prenom: String,
     email: String,
   },
-  categorie: String,
+  categorie: { type: String, enum:['Personnel', 'Travail', 'Projet', 'Autres'], default: 'Personnel' },
   etiquettes: [String],
   sousTaches: [
     {

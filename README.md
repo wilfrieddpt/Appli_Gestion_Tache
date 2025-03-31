@@ -12,7 +12,6 @@ Une application permettant de gérer des tâches avec une API REST et une interf
 ## Routes API
 - `GET /tasks` : Récupérer toutes les tâches.
 - `POST /tasks` : Créer une tâche.
-- ...
 
 ## Technologies
 - Node.js

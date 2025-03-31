@@ -79,10 +79,16 @@ button:hover {
 
 .task button:nth-child(2) {
   background-color: #dc3545;
+  color: white;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
 }
 
 .task button:nth-child(2):hover {
   background-color: #a71d2a;
+  transform: scale(1.05);
 }
 
 /* Filtres */

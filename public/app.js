@@ -26,6 +26,7 @@ async function fetchTasks() {
         <p>${task.description}</p>
         <p><strong>Statut :</strong> ${task.statut}</p>
         <p><strong>Priorité :</strong> ${task.priorite}</p>
+        <p><strong>Catégorie :</strong> ${task.categorie}</p>
         <p><strong>Date de création :</strong> ${new Date(task.dateCreation).toLocaleDateString()}</p>
         <p><strong>Auteur :</strong> ${task.auteur ? `${task.auteur.nom} ${task.auteur.prenom} (${task.auteur.email})` : 'Non spécifié'}</p>
         <p><strong>Commentaires :</strong></p>
